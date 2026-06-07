@@ -1,7 +1,6 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
 import { computeCharmProb } from "../lib/amuletProb"
-import rarityBaseProbability from "../data/Rarity.json"
 
 const useMhwStore = create(
   persist(
