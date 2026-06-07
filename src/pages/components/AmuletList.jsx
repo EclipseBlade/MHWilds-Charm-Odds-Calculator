@@ -1,19 +1,19 @@
+import { Button } from "@/components/ui/button"
+import { Switch } from "@/components/ui/switch"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { motion } from "framer-motion"
+import { Star, Trash2 } from "lucide-react"
 import React, { useMemo } from "react"
 import { useTranslation } from "react-i18next"
-import { motion } from "framer-motion"
-// ensure `motion` is referenced so some linters that don't detect JSX usage won't report it as unused
-void motion
-import { Star, Trash2 } from "lucide-react"
+import rarityBaseProbability from "../../data/Rarity.json"
+import { decimalToFraction } from "../../lib/fractionUtils"
 import useMhwStore from "../../store/mhwStore"
 import AmuletDetails from "../MHWildsCharmOddsCalculator/components/AmuletDetails"
 import CharmDisplay from "../MHWildsCharmOddsCalculator/components/CharmDisplay"
 import SkillSelector from "../MHWildsCharmOddsCalculator/components/SkillSelector"
 import SlotList from "../MHWildsCharmOddsCalculator/components/SlotList"
-import { decimalToFraction } from "../../lib/fractionUtils"
-import rarityBaseProbability from "../../data/Rarity.json"
-import { Switch } from "@/components/ui/switch"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Button } from "@/components/ui/button"
+// ensure `motion` is referenced so some linters that don't detect JSX usage won't report it as unused
+void motion
 
 export default function AmuletList({ charms: propCharms, favoriteCharms: propFavoriteCharms }) {
   const { amuletListShowMode, setFavoriteCharms, setAmuletListShowMode } = useMhwStore()
@@ -324,7 +324,7 @@ export default function AmuletList({ charms: propCharms, favoriteCharms: propFav
                           <div className='flex flex-col items-center min-w-0 gap-1 pr-5'>
                             {/* 稀有度圖示 - 參考 AmuletMainContent.jsx 的路徑與 onError 行為 */}
                             <img
-                              src={`${import.meta.env.BASE_URL}image/Charm/${encodeURIComponent(r || "unknown")}.png`}
+                              src={`${import.meta.env.BASE_URL}image/charms/${encodeURIComponent(r || "unknown")}.png`}
                               alt={r}
                               // keep objectFit inline because Tailwind doesn't provide a direct "object-contain" that maps exactly to style here in this project setup
                               style={{ objectFit: "contain" }}

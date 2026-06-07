@@ -1,14 +1,13 @@
-import React from "react"
 import clsx from "clsx"
-import SkillGroupsData from "../../../data/SkillGroups.json"
 import { Ban } from "lucide-react"
+import SkillGroupsData from "../../../data/SkillGroups.json"
 
 export default function CharmDisplay({ charm, groups, t, mode }) {
   return (
     <div className='flex flex-col'>
       <div className='flex flex-col items-center justify-center'>
         <img
-          src={`${import.meta.env.BASE_URL}image/Charm/${encodeURIComponent(charm.rarity || "unknown")}.png`}
+          src={`${import.meta.env.BASE_URL}image/charms/${encodeURIComponent(charm.rarity || "unknown")}.png`}
           alt={charm.rarity}
           style={{ width: 56, height: 56, objectFit: "contain" }}
           className='rounded'

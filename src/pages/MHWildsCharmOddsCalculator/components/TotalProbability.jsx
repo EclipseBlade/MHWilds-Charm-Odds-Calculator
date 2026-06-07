@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useRef } from "react"
 import { motion } from "framer-motion"
+import { useEffect, useRef, useState } from "react"
+import { useTranslation } from "react-i18next"
+import { decimalToFraction } from "../../../lib/fractionUtils"
+import useMhwStore from "../../../store/mhwStore"
 // ensure `motion` is referenced so some linters that don't detect JSX usage won't report it as unused
 void motion
-import { useTranslation } from "react-i18next"
-import useMhwStore from "../../../store/mhwStore"
-import { decimalToFraction } from "../../../lib/fractionUtils"
 
 export default function TotalProbability() {
   const { t } = useTranslation()
@@ -150,7 +150,7 @@ export default function TotalProbability() {
                         <div className='flex flex-col items-center min-w-0 gap-1 pr-5'>
                           {/* 稀有度圖示 - 參考 AmuletMainContent.jsx 的路徑與 onError 行為 */}
                           <img
-                            src={`${import.meta.env.BASE_URL}image/Charm/${encodeURIComponent(r || "unknown")}.png`}
+                            src={`${import.meta.env.BASE_URL}image/charms/${encodeURIComponent(r || "unknown")}.png`}
                             alt={r}
                             // keep objectFit inline because Tailwind doesn't provide a direct "object-contain" that maps exactly to style here in this project setup
                             style={{ objectFit: "contain" }}

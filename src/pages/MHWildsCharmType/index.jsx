@@ -1,15 +1,15 @@
-import React, { useState, useMemo } from "react"
+import React, { useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 // Amulet data migrated into RarityBaseProbability.json (Group + combinationCount)
-import Sidebar from "../../components/Sidebar"
-import Header from "../../components/Header"
-import { useLanguageSync } from "../../hooks/useLanguageSync"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogFooter, DialogClose } from "@/components/ui/dialog"
-import CharmSkillsDialogContent from "./CharmSkillsDialogContent"
-import skillGroupsData from "../../data/SkillGroups.json"
-import rarityProbabilities from "../../data/Rarity.json"
 import { Button } from "@/components/ui/button"
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import * as Tooltip from "@radix-ui/react-tooltip"
+import Header from "../../components/Header"
+import Sidebar from "../../components/Sidebar"
+import rarityProbabilities from "../../data/Rarity.json"
+import skillGroupsData from "../../data/SkillGroups.json"
+import { useLanguageSync } from "../../hooks/useLanguageSync"
+import CharmSkillsDialogContent from "./CharmSkillsDialogContent"
 const CharmTypePage = () => {
   const { t } = useTranslation()
   useLanguageSync() // 同步語言設置
@@ -218,7 +218,7 @@ const CharmTypePage = () => {
                       <div className='flex justify-center mb-5'>
                         <div className='flex items-center'>
                           <img
-                            src={`${import.meta.env.BASE_URL}image/Charm/${encodeURIComponent(rarity)}.png`}
+                            src={`${import.meta.env.BASE_URL}image/charms/${encodeURIComponent(rarity)}.png`}
                             alt={rarity}
                             style={{ width: 40, height: 40, objectFit: "contain" }}
                             className='mr-2 rounded'

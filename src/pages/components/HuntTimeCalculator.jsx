@@ -1,11 +1,11 @@
-import React, { useState, useMemo } from "react"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+import { Input } from "@/components/ui/input"
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { ChevronDown } from "lucide-react"
+import { useMemo, useState } from "react"
+import { useTranslation } from "react-i18next"
 import MonsterData from "../../data/Monster.json"
 import RarityData from "../../data/Rarity.json"
-import { useTranslation } from "react-i18next"
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { ChevronDown } from "lucide-react"
 
 export default function HuntTimeCalculator({ AvlCharms }) {
   const { t } = useTranslation()
@@ -268,7 +268,7 @@ export default function HuntTimeCalculator({ AvlCharms }) {
                       {selectedMonster ? (
                         <div className='flex items-center w-full gap-3'>
                           <img
-                            src={`${import.meta.env.BASE_URL}image/Monsters/${encodeURIComponent(selectedMonster)}.webp`}
+                            src={`${import.meta.env.BASE_URL}image/monsters/${encodeURIComponent(selectedMonster)}.webp`}
                             alt={selectedMonster}
                             loading='lazy'
                             className='object-contain w-8 h-8 rounded md:w-10 md:h-10 flex-shrink-0'
@@ -302,7 +302,7 @@ export default function HuntTimeCalculator({ AvlCharms }) {
                       {monsterList.map((monster) => {
                         const key = `monsters.${monster}`
                         const label = t(key, monster)
-                        const imgSrcPublic = `${import.meta.env.BASE_URL}image/Monsters/${encodeURIComponent(monster)}.webp`
+                        const imgSrcPublic = `${import.meta.env.BASE_URL}image/monsters/${encodeURIComponent(monster)}.webp`
 
                         return (
                           <SelectItem key={monster} value={monster} className='py-2'>
