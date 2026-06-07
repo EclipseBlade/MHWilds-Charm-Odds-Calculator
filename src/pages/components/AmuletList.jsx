@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { motion } from "framer-motion"
+import { motion as Motion } from "framer-motion"
 import { Star, Trash2 } from "lucide-react"
 import React, { useMemo } from "react"
 import { useTranslation } from "react-i18next"
@@ -12,8 +12,6 @@ import AmuletDetails from "../MHWildsCharmOddsCalculator/components/AmuletDetail
 import CharmDisplay from "../MHWildsCharmOddsCalculator/components/CharmDisplay"
 import SkillSelector from "../MHWildsCharmOddsCalculator/components/SkillSelector"
 import SlotList from "../MHWildsCharmOddsCalculator/components/SlotList"
-// ensure `motion` is referenced so some linters that don't detect JSX usage won't report it as unused
-void motion
 
 export default function AmuletList({ charms: propCharms, favoriteCharms: propFavoriteCharms }) {
   const { amuletListShowMode, setFavoriteCharms, setAmuletListShowMode } = useMhwStore()
@@ -151,7 +149,7 @@ export default function AmuletList({ charms: propCharms, favoriteCharms: propFav
           </div>
         </div>
         <div className=''>
-          <motion.ul
+          <Motion.ul
             className={amuletListShowMode === "simple" ? "grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4" : ""}
             variants={containerVariants}
             initial='hidden'
@@ -170,7 +168,7 @@ export default function AmuletList({ charms: propCharms, favoriteCharms: propFav
 
               return (
                 <React.Fragment key={key}>
-                  <motion.li
+                  <Motion.li
                     variants={itemVariants}
                     initial='hidden'
                     whileInView='visible'
@@ -208,7 +206,7 @@ export default function AmuletList({ charms: propCharms, favoriteCharms: propFav
                       </div>
                       <div className='flex items-center justify-between'>
                         {/* 技能機率 */}
-                        <div className='text-2xl font-bold md:pr-3 '>
+                          <div className='text-2xl font-bold md:pr-3 '>
                           {(() => {
                             const raw = charm?.computed?.finalNoSlot || 0
                             const chance = Number(raw)
@@ -259,11 +257,11 @@ export default function AmuletList({ charms: propCharms, favoriteCharms: propFav
                     </div>
 
                     {amuletListShowMode !== "simple" && <AmuletDetails charm={charm} t={t} />}
-                  </motion.li>
+                    </Motion.li>
                 </React.Fragment>
               )
             })}
-          </motion.ul>
+            </Motion.ul>
         </div>
       </div>
     )

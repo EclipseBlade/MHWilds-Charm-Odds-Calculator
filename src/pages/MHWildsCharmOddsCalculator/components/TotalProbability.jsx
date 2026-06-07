@@ -1,10 +1,8 @@
-import { motion } from "framer-motion"
+import { motion as Motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { decimalToFraction } from "../../../lib/fractionUtils"
 import useMhwStore from "../../../store/mhwStore"
-// ensure `motion` is referenced so some linters that don't detect JSX usage won't report it as unused
-void motion
 
 export default function TotalProbability() {
   const { t } = useTranslation()
@@ -125,7 +123,7 @@ export default function TotalProbability() {
                   // pct and frac values are formatted inline using helpers when rendered
                   return (
                     // make each rarity item full-width on small screens and row-aligned on md+
-                    <motion.div
+                    <Motion.div
                       key={`${r}-${AvlCharms.length}`}
                       className='w-full p-2 rounded'
                       data-rarity={r}
@@ -185,7 +183,7 @@ export default function TotalProbability() {
                           </div>
                         </div>
                       </div>
-                    </motion.div>
+                    </Motion.div>
                   )
                 })
             })()}
