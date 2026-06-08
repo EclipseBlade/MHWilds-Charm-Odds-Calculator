@@ -15,7 +15,7 @@ export default function HuntTimeCalculator({ AvlCharms }) {
   const [huntTime, setHuntTime] = useState(10) // 討伐時間(分鐘)
   const [restTime, setRestTime] = useState(2) // 休息時間(分鐘)
   const [isSlotOpen, setIsSlotOpen] = useState(false) // 控制插槽組合展開/摺疊
-  console.log(AvlCharms)
+  // console.log(AvlCharms)
 
   // 通用計算護石機率總和分母的函數
   const calculateCharmDenominator = useMemo(() => {

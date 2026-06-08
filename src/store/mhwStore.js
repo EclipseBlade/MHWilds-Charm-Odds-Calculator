@@ -60,7 +60,7 @@ const useMhwStore = create(
       favoriteCharms: [],
 
       setFavoriteCharms: (charms) => {
-        console.log(charms)
+        // console.log(charms)
         const filteredCharms = Array.isArray(charms)
           ? charms.filter(
               (charm, index, self) =>
