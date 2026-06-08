@@ -178,7 +178,7 @@ export default function HuntTimeCalculator({ AvlCharms }) {
     const days = h >= 24 ? Math.ceil(h / 24) : 0
     const hoursFixed = h.toFixed(1)
     if (days > 0) {
-      return `${days.toLocaleString()}${t("huntTimeCalculator.daysSuffix", "天")}(${parseFloat(hoursFixed).toLocaleString()} ${t(
+      return `${days.toLocaleString()}${t("huntTimeCalculator.daysSuffix", "天", { count: days })}(${parseFloat(hoursFixed).toLocaleString()} ${t(
         "huntTimeCalculator.hours",
         "hours"
       )})`

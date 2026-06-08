@@ -88,7 +88,10 @@
     "baseRewardNote": "Quest bonus: Additional 1-3 charms received after each monster hunt, already included in total charm count calculation.",
     "disclaimer": "Time calculation is for reference only, as it needs to be based on average probability as the foundation.",
     "noData": "No charm data available. Please select skills first.",
-    "slotCombinationDetails": "Slot Combination Details"
+    "slotCombinationDetails": "Slot Combination Details",
+    "type": "Probability",
+    "daysSuffix_one": " Day",
+    "daysSuffix_other": " Days"
   },
   "monsters": {
     "Uth Duna": "Uth Duna",
@@ -146,7 +149,8 @@
     "none": "None",
     "level": "Lv.",
     "probability": "Probability",
-    "skillProbability": "Skill Probability"
+    "skillProbability": "Skill Probability",
+    "empty": "empty"
   },
   "charmTypes": {
     "title": "Charm Types",

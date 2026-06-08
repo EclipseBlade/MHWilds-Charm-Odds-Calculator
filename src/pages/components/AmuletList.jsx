@@ -23,9 +23,9 @@ export default function AmuletList({ charms: propCharms, favoriteCharms: propFav
     "data:image/svg+xml;utf8," +
     encodeURIComponent(
       "<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'>" +
-        "<rect fill='%23efefef' width='100%' height='100%'/>" +
-        "<text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='14' fill='%23999'>?" +
-        "</text></svg>"
+      "<rect fill='%23efefef' width='100%' height='100%'/>" +
+      "<text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='14' fill='%23999'>?" +
+      "</text></svg>"
     )
 
   const { t } = useTranslation()
@@ -206,7 +206,7 @@ export default function AmuletList({ charms: propCharms, favoriteCharms: propFav
                       </div>
                       <div className='flex items-center justify-between'>
                         {/* 技能機率 */}
-                          <div className='text-2xl font-bold md:pr-3 '>
+                        <div className='text-2xl font-bold md:pr-3 '>
                           {(() => {
                             const raw = charm?.computed?.finalNoSlot || 0
                             const chance = Number(raw)
@@ -257,11 +257,11 @@ export default function AmuletList({ charms: propCharms, favoriteCharms: propFav
                     </div>
 
                     {amuletListShowMode !== "simple" && <AmuletDetails charm={charm} t={t} />}
-                    </Motion.li>
+                  </Motion.li>
                 </React.Fragment>
               )
             })}
-            </Motion.ul>
+          </Motion.ul>
         </div>
       </div>
     )
@@ -306,7 +306,7 @@ export default function AmuletList({ charms: propCharms, favoriteCharms: propFav
                     // pct and frac values are formatted inline using helpers when rendered
                     return (
                       // make each rarity item full-width on small screens and row-aligned on md+
-                      <motion.div
+                      <Motion.div
                         key={`${r}-${charms.length}`}
                         className='w-full p-2 rounded'
                         initial={{ opacity: 0, y: 8 }}
@@ -357,7 +357,7 @@ export default function AmuletList({ charms: propCharms, favoriteCharms: propFav
                             </div>
                           </div>
                         </div>
-                      </motion.div>
+                      </Motion.div>
                     )
                   })
               })()}
@@ -372,8 +372,8 @@ export default function AmuletList({ charms: propCharms, favoriteCharms: propFav
 
   return (
     <Tabs defaultValue='list' className='w-full p-5 bg-white rounded-md'>
-      <div class='p-2 md:p-6 '>
-        <h2 class='text-2xl font-bold mb-5 text-gray-800'>{t("amuletList.list", "護石列表")}</h2>
+      <div className='p-2 md:p-6 '>
+        <h2 className='text-2xl font-bold mb-5 text-gray-800'>{t("amuletList.list", "護石列表")}</h2>
 
         <TabsList className='grid w-full grid-cols-2'>
           <TabsTrigger value='list'>{t("amuletList.list", "護石列表")}</TabsTrigger>

@@ -88,7 +88,9 @@
     "baseRewardNote": "任務額外獎勵：每次討伐怪物後額外獲得 1-3 個護石，已計入總護石數量計算中。",
     "disclaimer": "時間計算僅供參考，因需基於平均機率為基礎上計算",
     "noData": "無保存資料。請先選擇技能。",
-    "slotCombinationDetails": "插槽組合詳細資料"
+    "slotCombinationDetails": "插槽組合詳細資料",
+    "type": "機率",
+    "daysSuffix": " 天"
   },
   "monsters": {
     "Uth Duna": "波衣龍",
@@ -147,7 +149,8 @@
     "none": "無",
     "level": "Lv.",
     "probability": "機率",
-    "skillProbability": "技能機率"
+    "skillProbability": "技能機率",
+    "empty": "空"
   },
   "charmTypes": {
     "title": "護石種類",
